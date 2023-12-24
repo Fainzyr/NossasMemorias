@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4128d3a7f2.js" crossorigin="anonymous"></script>
+    <title>Memorias nossas</title>
+</head>
+<body>
+    <section id="inicio">
+        <p>Eu sei que ta meio feinho, desculpa, mas eu não sou bom em designer. Fiz isso com todo meu amor e carinho pra você, e vou manter esse site guardado pra sempre (talvez o link possa mudar). O site não ta 100% pronto, ainda possui alguns bugs e eu não coloquei tudo que eu quero colocar, mas ele ta assim porque eu quero que você veja ele ate o natal ou ano novo.<br>Espero que goste.
+        </p>
+    </section>
+
+    <section id="album">
+        <h1>Nossas Fotos</h1>
+        <div id="fotos">
+            <div class="moldura"><img src="imagens/foto1.jpg" alt="Foto" class="foto"></div>
+            <div class="moldura"><img src="imagens/foto2.jpg" alt="Foto" class="foto"></div>
+            <div class="moldura"><img src="imagens/foto3.jpg" alt="Foto" class="foto"></div>
+            <div class="moldura"><img src="imagens/foto4.jpg" alt="Foto" class="foto"></div>
+            <div class="moldura"><img src="imagens/foto5.jpg" alt="Foto" class="foto"></div>    
+            <div class="moldura"><img src="imagens/foto8.jpg" alt="Foto" class="foto"></div>    
+            <div class="moldura"><img src="imagens/foto9.jpg" alt="Foto" class="foto" id="up"></div>    
+            <div class="moldura"><img src="imagens/foto10.jpg" alt="Foto" class="foto"></div>      
+            <div class="moldura"><img src="imagens/foto13.jpg" alt="Foto" class="foto"></div>
+        </div>
+        
+        
+        <div id="imagem-ampliada">
+            <img src="" alt="Imagem Ampliada" id="imagem-ampliada-src">
+        </div>
+    </section>
+
+    <section id="musicas">
+        <div id="suas">
+            <h1>Sua Playlist</h1>
+            <iframe src="https://open.spotify.com/embed/playlist/5dG5C14Um7FaD8dPRK5TDd?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" class="playlist"></iframe>
+        </div>
+        <div id="minhas">
+            <h1>Minha Playlist</h1>
+            <iframe src="https://open.spotify.com/embed/playlist/7hsLHfnhN5BxyPyMolraI7?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" class="playlist"></iframe>
+        </div>
+    </section>
+
+    <section id="final">
+        <img src="https://logopng.com.br/logos/coracao-72.svg" alt="coração" id="coração">
+        <div id="t">Você sempre vai ter<br>um espaço no meu <br>coração</div>
+    </section>
+    <script>
+        const imagens = document.querySelectorAll('.foto');
+
+        imagens.forEach(function (imagem) {
+            imagem.addEventListener('click', function () {
+                const imagemAmpliada = document.getElementById('imagem-ampliada');
+                const imagemAmpliadaSrc = document.getElementById('imagem-ampliada-src');
+
+                imagemAmpliadaSrc.src = this.src;
+
+                imagemAmpliada.style.display = 'block';
+
+                imagemAmpliada.addEventListener('click', function () {
+                    imagemAmpliada.style.display = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
